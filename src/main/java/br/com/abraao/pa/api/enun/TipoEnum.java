@@ -1,6 +1,6 @@
 package br.com.abraao.pa.api.enun;
 
-public enum TipoEnun {
+public enum TipoEnum {
 	INICIO_TRABALHO,
 	TERMINO_TRABALHO,
 	INICIO_ALMOCO,

@@ -1,9 +1,11 @@
 package br.com.abraao.pa.api.entities;
 
+
 import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
@@ -11,31 +13,35 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import br.com.abraao.pa.api.enun.TipoEnum;
 
-import br.com.abraao.pa.api.enun.TipoEnun;
 
+@Entity
+@Table(name = "lancamento")
 public class Lancamento implements Serializable {
 	
-	private static final long serialVersionUID  =  3L; 
+	private static final long serialVersionUID = 6524560251526772839L;
 
 	private Long id;
 	private Date data;
 	private String descricao;
-	private String localicacao;
+	private String localizacao;
 	private Date dataCriacao;
 	private Date dataAtualizacao;
-	private TipoEnun tipo;
+	private TipoEnum tipo;
 	private Funcionario funcionario;
 
 	public Lancamento() {
-
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
 	public Long getId() {
 		return id;
 	}
@@ -54,7 +60,7 @@ public class Lancamento implements Serializable {
 		this.data = data;
 	}
 
-	@Column(name = "descricao", nullable = false)
+	@Column(name = "descricao", nullable = true)
 	public String getDescricao() {
 		return descricao;
 	}
@@ -62,14 +68,14 @@ public class Lancamento implements Serializable {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
-	@Column(name = "localicao", nullable = false)
-	public String getLocalicacao() {
-		return localicacao;
+	
+	@Column(name = "localizacao", nullable = true)
+	public String getLocalizacao() {
+		return localizacao;
 	}
 
-	public void setLocalicacao(String localicacao) {
-		this.localicacao = localicacao;
+	public void setLocalizacao(String localizacao) {
+		this.localizacao = localizacao;
 	}
 
 	@Column(name = "data_criacao", nullable = false)
@@ -92,13 +98,14 @@ public class Lancamento implements Serializable {
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "tipo", nullable = false)
-	public TipoEnun getTipo() {
+	public TipoEnum getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(TipoEnun tipo) {
+	public void setTipo(TipoEnum tipo) {
 		this.tipo = tipo;
 	}
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	public Funcionario getFuncionario() {
 		return funcionario;
@@ -107,12 +114,25 @@ public class Lancamento implements Serializable {
 	public void setFuncionario(Funcionario funcionario) {
 		this.funcionario = funcionario;
 	}
+	
+	@PreUpdate
+    public void preUpdate() {
+        dataAtualizacao = new Date();
+    }
+     
+    @PrePersist
+    public void prePersist() {
+        final Date atual = new Date();
+        dataCriacao = atual;
+        dataAtualizacao = atual;
+    }
 
 	@Override
 	public String toString() {
-		return "Lancamento [id=" + id + ", data=" + data + ", descricao=" + descricao + ", localicacao=" + localicacao
+		return "Lancamento [id=" + id + ", data=" + data + ", descricao=" + descricao + ", localizacao=" + localizacao
 				+ ", dataCriacao=" + dataCriacao + ", dataAtualizacao=" + dataAtualizacao + ", tipo=" + tipo
 				+ ", funcionario=" + funcionario + "]";
 	}
 
 }
+

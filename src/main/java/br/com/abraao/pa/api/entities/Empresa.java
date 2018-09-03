@@ -1,5 +1,6 @@
 package br.com.abraao.pa.api.entities;
 
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -16,33 +17,24 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "empresa")
 public class Empresa implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 3960436649365666213L;
+	
 	private Long id;
 	private String razaoSocial;
 	private String cnpj;
 	private Date dataCriacao;
 	private Date dataAtualizacao;
 	private List<Funcionario> funcionarios;
-
-	public Empresa(Long id, String razaoSocail, String cnpj, Date dataCricao, Date dataAtualizacao) {
-		this.id = id;
-		this.cnpj = cnpj;
-		this.dataCriacao = dataCricao;
-		this.dataAtualizacao = dataAtualizacao;
-
-	}
-
+	
 	public Empresa() {
-
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
 	public Long getId() {
 		return id;
 	}
@@ -95,25 +87,22 @@ public class Empresa implements Serializable {
 	public void setFuncionarios(List<Funcionario> funcionarios) {
 		this.funcionarios = funcionarios;
 	}
-
+	
 	@PreUpdate
-	public void preUpdate() {
-		dataAtualizacao = new Date();
-
-	}
-
-	@PrePersist
-	public void prePersiste() {
-		final Date atual = new Date();
-		dataCriacao = atual;
-		dataAtualizacao = atual;
-
-	}
+    public void preUpdate() {
+        dataAtualizacao = new Date();
+    }
+     
+    @PrePersist
+    public void prePersist() {
+        final Date atual = new Date();
+        dataCriacao = atual;
+        dataAtualizacao = atual;
+    }
 
 	@Override
 	public String toString() {
 		return "Empresa [id=" + id + ", razaoSocial=" + razaoSocial + ", cnpj=" + cnpj + ", dataCriacao=" + dataCriacao
 				+ ", dataAtualizacao=" + dataAtualizacao + "]";
 	}
-
 }
