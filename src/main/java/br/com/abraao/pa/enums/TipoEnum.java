@@ -1,4 +1,4 @@
-package br.com.abraao.pa.api.enun;
+package br.com.abraao.pa.enums;
 
 public enum TipoEnum {
 	INICIO_TRABALHO,

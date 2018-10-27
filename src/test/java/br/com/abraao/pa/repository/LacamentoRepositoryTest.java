@@ -15,11 +15,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import br.com.abraao.pa.api.entities.Empresa;
-import br.com.abraao.pa.api.entities.Funcionario;
-import br.com.abraao.pa.api.entities.Lancamento;
-import br.com.abraao.pa.api.enun.PerfilEnum;
-import br.com.abraao.pa.api.enun.TipoEnum;
+import br.com.abraao.pa.domain.Empresa;
+import br.com.abraao.pa.domain.Funcionario;
+import br.com.abraao.pa.domain.Lancamento;
+import br.com.abraao.pa.enums.PerfilEnum;
+import br.com.abraao.pa.enums.TipoEnum;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)

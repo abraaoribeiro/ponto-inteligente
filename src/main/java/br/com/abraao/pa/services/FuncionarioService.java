@@ -2,7 +2,7 @@ package br.com.abraao.pa.services;
 
 import java.util.Optional;
 
-import br.com.abraao.pa.api.entities.Funcionario;
+import br.com.abraao.pa.domain.Funcionario;
 
 public interface FuncionarioService {
 

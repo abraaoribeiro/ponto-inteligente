@@ -1,4 +1,4 @@
-package br.com.abraao.pa.api.entities;
+package br.com.abraao.pa.domain;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -15,10 +15,11 @@ import javax.persistence.FetchType;
 import javax.persistence.PrePersist;
 import javax.persistence.Enumerated;
 import javax.persistence.TemporalType;
+
+import br.com.abraao.pa.enums.TipoEnum;
+
 import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
-
-import br.com.abraao.pa.api.enun.TipoEnum;
 
 import lombok.Getter;
 import lombok.Setter;

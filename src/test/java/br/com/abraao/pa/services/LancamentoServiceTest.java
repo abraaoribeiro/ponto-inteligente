@@ -20,7 +20,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import br.com.abraao.pa.api.entities.Lancamento;
+import br.com.abraao.pa.domain.Lancamento;
 import br.com.abraao.pa.repository.LancamentoRepository;
 
 @RunWith(SpringRunner.class)

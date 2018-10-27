@@ -3,7 +3,7 @@ package br.com.abraao.pa.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.abraao.pa.api.entities.Funcionario;
+import br.com.abraao.pa.domain.Funcionario;
 
 @Transactional(readOnly = true)
 public interface FuncionarioRepository extends JpaRepository<Funcionario, Long> {

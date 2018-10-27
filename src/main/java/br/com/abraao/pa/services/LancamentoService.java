@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
-import br.com.abraao.pa.api.entities.Lancamento;
+import br.com.abraao.pa.domain.Lancamento;
 
 public interface LancamentoService {
 	

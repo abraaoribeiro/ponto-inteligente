@@ -1,4 +1,4 @@
-package br.com.abraao.pa.api.entities;
+package br.com.abraao.pa.domain;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -22,7 +22,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Transient;
 
-import br.com.abraao.pa.api.enun.PerfilEnum;
+import br.com.abraao.pa.enums.PerfilEnum;
 import lombok.Getter;
 import lombok.Setter;
 

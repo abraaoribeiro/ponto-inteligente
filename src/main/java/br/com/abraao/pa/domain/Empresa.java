@@ -1,4 +1,4 @@
-package br.com.abraao.pa.api.entities;
+package br.com.abraao.pa.domain;
 
 import java.io.Serializable;
 

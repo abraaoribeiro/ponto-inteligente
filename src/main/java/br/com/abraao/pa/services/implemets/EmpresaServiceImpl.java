@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.abraao.pa.api.entities.Empresa;
+import br.com.abraao.pa.domain.Empresa;
 import br.com.abraao.pa.repository.EmpresaRepository;
 import br.com.abraao.pa.services.EmpresaService;
 

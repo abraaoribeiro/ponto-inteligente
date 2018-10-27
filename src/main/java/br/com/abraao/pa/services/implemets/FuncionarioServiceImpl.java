@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.abraao.pa.api.entities.Funcionario;
+import br.com.abraao.pa.domain.Funcionario;
 import br.com.abraao.pa.repository.FuncionarioRepository;
 import br.com.abraao.pa.services.FuncionarioService;
 

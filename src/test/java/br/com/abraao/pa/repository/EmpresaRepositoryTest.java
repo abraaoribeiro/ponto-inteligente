@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import br.com.abraao.pa.api.entities.Empresa;
+import br.com.abraao.pa.domain.Empresa;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

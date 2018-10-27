@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import br.com.abraao.pa.api.entities.Lancamento;
+import br.com.abraao.pa.domain.Lancamento;
 import br.com.abraao.pa.repository.LancamentoRepository;
 import br.com.abraao.pa.services.LancamentoService;
 

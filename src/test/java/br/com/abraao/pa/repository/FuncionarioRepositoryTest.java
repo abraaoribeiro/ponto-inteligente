@@ -14,10 +14,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import br.com.abraao.pa.api.entities.Empresa;
-import br.com.abraao.pa.api.entities.Funcionario;
-import br.com.abraao.pa.api.enun.PerfilEnum;
-import br.com.abraao.pa.api.utils.PasswordUtil;
+import br.com.abraao.pa.domain.Empresa;
+import br.com.abraao.pa.domain.Funcionario;
+import br.com.abraao.pa.enums.PerfilEnum;
+import br.com.abraao.pa.utils.PasswordUtil;
 
 
 

@@ -11,7 +11,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.abraao.pa.api.entities.Lancamento;
+import br.com.abraao.pa.domain.Lancamento;
 
 @Transactional(readOnly = true)
 @NamedQueries({

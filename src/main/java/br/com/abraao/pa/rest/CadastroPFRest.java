@@ -1,4 +1,4 @@
-package br.com.abraao.pa.controllers;
+package br.com.abraao.pa.rest;
 
 import java.math.BigDecimal;
 import java.security.NoSuchAlgorithmException;
@@ -18,21 +18,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.abraao.pa.api.entities.Empresa;
-import br.com.abraao.pa.api.entities.Funcionario;
-import br.com.abraao.pa.api.enun.PerfilEnum;
-import br.com.abraao.pa.api.utils.PasswordUtil;
+import br.com.abraao.pa.domain.Empresa;
+import br.com.abraao.pa.domain.Funcionario;
 import br.com.abraao.pa.dtos.CadastroPFDto;
+import br.com.abraao.pa.enums.PerfilEnum;
 import br.com.abraao.pa.response.Response;
 import br.com.abraao.pa.services.EmpresaService;
 import br.com.abraao.pa.services.FuncionarioService;
+import br.com.abraao.pa.utils.PasswordUtil;
 
 @RestController
 @RequestMapping("/api/cadastrar-pf")
 @CrossOrigin(origins = "*")
-public class CadastroPFController {
+public class CadastroPFRest {
 
-	private static final Logger log = LoggerFactory.getLogger(CadastroPFController.class);
+	private static final Logger log = LoggerFactory.getLogger(CadastroPFRest.class);
 
 	@Autowired
 	private EmpresaService empresaService;
@@ -40,7 +40,7 @@ public class CadastroPFController {
 	@Autowired
 	private FuncionarioService funcionarioService;
 
-	public CadastroPFController() {
+	public CadastroPFRest() {
 	}
 
 	/**

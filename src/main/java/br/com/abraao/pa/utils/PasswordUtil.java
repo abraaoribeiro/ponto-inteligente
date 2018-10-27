@@ -1,4 +1,4 @@
-package br.com.abraao.pa.api.utils;
+package br.com.abraao.pa.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
