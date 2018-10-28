@@ -6,29 +6,31 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
 import javax.persistence.Enumerated;
-import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import br.com.abraao.pa.enums.PerfilEnum;
+import br.com.abraao.pa.domain.enums.PerfilEnum;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
 @Getter
 @Setter
-@Entity
+@NoArgsConstructor
 @Table(name = "funcionario")
 public class Funcionario implements Serializable {
 	private static final long serialVersionUID = -5754246207015712518L;
@@ -74,9 +76,7 @@ public class Funcionario implements Serializable {
 	@OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Lancamento> lancamentos;
 
-	public Funcionario() {
-	}
-
+	
 	@Transient
 	public Optional<BigDecimal> getValorHoraOpt() {
 		return Optional.ofNullable(valorHora);

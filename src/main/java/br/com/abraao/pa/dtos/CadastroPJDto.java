@@ -6,12 +6,14 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.br.CNPJ;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
 public class CadastroPJDto {
 
 	private Long id;
@@ -39,8 +41,6 @@ public class CadastroPJDto {
 	@CNPJ(message="CNPJ inválido.")
 	private String cnpj;
 	
-	public CadastroPJDto() {
-		
-	}
+	
 	
 }

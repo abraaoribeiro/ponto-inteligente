@@ -3,30 +3,30 @@ package br.com.abraao.pa.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Entity;
 import javax.persistence.Column;
-import javax.persistence.Temporal;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
-import javax.persistence.PreUpdate;
-import javax.persistence.ManyToOne;
-import javax.persistence.FetchType;
-import javax.persistence.PrePersist;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import br.com.abraao.pa.enums.TipoEnum;
-
-import javax.persistence.GenerationType;
-import javax.persistence.GeneratedValue;
-
+import br.com.abraao.pa.domain.enums.TipoEnum;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
 @Getter
 @Setter
-@Entity
+@NoArgsConstructor
 @Table(name = "lancamento")
 public class Lancamento implements Serializable {
 
@@ -59,8 +59,7 @@ public class Lancamento implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Funcionario funcionario;
 
-	public Lancamento() {
-	}
+	
 
 	@PreUpdate
 	public void preUpdate() {

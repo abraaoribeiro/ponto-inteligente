@@ -18,8 +18,8 @@ import br.com.abraao.pa.services.EmpresaService;
 import br.com.abraao.pa.response.Response;
 
 @RestController
-@RequestMapping("api/empresas")
-@CrossOrigin("*")
+@RequestMapping("/api/empresas")
+@CrossOrigin(origins = "*")
 public class EmpresaRest {
 
 	private static final Logger log = LoggerFactory.getLogger(EmpresaRest.class);

@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.abraao.pa.domain.Empresa;
 import br.com.abraao.pa.domain.Funcionario;
+import br.com.abraao.pa.domain.enums.PerfilEnum;
 import br.com.abraao.pa.dtos.CadastroPFDto;
-import br.com.abraao.pa.enums.PerfilEnum;
 import br.com.abraao.pa.response.Response;
 import br.com.abraao.pa.services.EmpresaService;
 import br.com.abraao.pa.services.FuncionarioService;

@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import br.com.abraao.pa.domain.Empresa;
 import br.com.abraao.pa.domain.Funcionario;
-import br.com.abraao.pa.enums.PerfilEnum;
+import br.com.abraao.pa.domain.enums.PerfilEnum;
 import br.com.abraao.pa.utils.PasswordUtil;
 
 

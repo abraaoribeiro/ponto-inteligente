@@ -17,13 +17,15 @@ import javax.persistence.Column;
 import javax.persistence.Table;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Id;
 
+@Entity
 @Getter
 @Setter
-@Entity
+@NoArgsConstructor
 @Table(name = "empresa")
 public class Empresa implements Serializable {
 
@@ -48,9 +50,7 @@ public class Empresa implements Serializable {
 	@OneToMany(mappedBy = "empresa", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Funcionario> funcionarios;
 
-	public Empresa() {
-	}
-
+	
 	@PreUpdate
 	public void preUpdate() {
 		dataAtualizacao = new Date();

@@ -1,4 +1,4 @@
-package br.com.abraao.pa.api.utils;
+package br.com.abraao.pa.utils;
 
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
